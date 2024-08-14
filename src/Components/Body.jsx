@@ -1,5 +1,24 @@
 import React from 'react'
 import image1 from '../assets/Group 1000003970.png'
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
+import { FaRegThumbsUp } from "react-icons/fa";
+import { FaRegThumbsDown } from "react-icons/fa";
+import { IoChatbubbleOutline } from "react-icons/io5";
+import { TiArrowForward } from "react-icons/ti";
+import img1  from '../assets/img1.png';
+import img2  from '../assets/Group 3.png';
+import img3 from '../assets/Rectangle 6.png';
+import img4 from '../assets/Rectangle 7.png';
+import img5  from '../assets/Group 4.png';
+import img6  from '../assets/image 58.png';
+import img7  from '../assets/image 7.png';
+import img8  from '../assets/image 8.png';
+import img9  from '../assets/image 9.png';
+
+
+
+
 
 
 function Body() {
@@ -30,6 +49,177 @@ function Body() {
   </div>
   </div>
 </div>
+
+{/* Reviews section */}
+<div className="">
+<div className="font-bold text-[25px] mt-[60px] flex justify-center lg:text-[30px]">Recent Reviews</div>
+<div className="reviews flex justify-center items-center mt-[40px]">
+  <div className=" border-[1px] w-[400px] h-[auto] p-[20px] mb-[20px] flex-row rounded lg:flex lg:w-[auto]">
+<div className="">
+  <div className="">
+  <div className="w-24 flex">
+    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" className="rounded-[50%] size-[60%]"/>
+    <div className="flex-row ml-[10px]">
+  <div className="profile text-[20px] w-[200px] font-semibold">Mr. Yemi</div>
+    <div className="">@yemi</div>
+    </div> 
+  </div>
+    </div>
+  <div className="flex">
+  <div className="text-[15px]">Akure Nigeria</div>
+  <div className="divider divider-horizontal h-7 w-px bg-[black] mx-4"></div>
+  <div className="flex text-[15px]">Review for:<div className="text-[red] underline ml-[10px]">Organization</div></div>
+  </div>
+  </div>
+  <div className="">
+  <Stack className="mt-[10px] lg:ml-[200px]"spacing={1}>
+      <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
+      <div className="">3 days ago</div>
+    </Stack>
+    <div className="lg:mt-[50px] lg:ml-[-290px]">
+  <br></br>
+  <div>Comments..</div>
+  <br></br>
+  </div>
+  <br></br>
+  <div className="icons flex w-[auto] gap-[100px] lg:ml-[-290px]">
+    <div className="flex gap-[20px]">
+  <div className="flex gap-[15px] justify-center align-center">
+  <div><FaRegThumbsUp className="size-[20px]"/></div><div>0 Upvote(s)</div>
+  </div>
+  <div className="flex gap-[15px] justify-center align-center">
+  <FaRegThumbsDown className="size-[20px]"/><div>0 Downvote(s)</div>
+  </div>
+  <div className="flex gap-[20px] justify-center align-center" >
+  <IoChatbubbleOutline className="size-[20px]"/>
+  </div>
+  <div className="lg:ml-[230px]">
+  <TiArrowForward className="size-[30px]"/>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+</div>
+<div className="flex justify-center mt-[20px] mb-[20px]"><button className="border-[1px] py-[15px] px-[30px] rounded-[10px]">Read More Reviews</button></div>
+</div>
+<div className="section mt-[60px]">
+  <div className="flex mt-[40px]">
+  <div className="font-bold text-[25px] absolute left-[20px] lg:text-[30px] lg:absolute lg:left-[40px]">Explore Categories</div>
+  <div className="absolute right-[20px] lg:absolute lg:right-[100px]">View all</div>
+  </div>
+  {/* Categories section */}
+  <div className="categories mt-[60px] mb-[20px] flex justify-center align-center">
+    <div className="grid gap-[10px] w-[95%] lg:grid lg:grid-cols-3">
+    <div className="category border-[1px] bg-[#FAFAFA] py-8 w-[95%] rounded-[10px]">
+      <div className="category content">
+        <div className="ml-[20px]">Restaurants and bars</div>
+      </div>
+    </div>
+    <div className="category border-[1px] bg-[#FAFAFA] py-8 w-[95%] rounded-[10px]">
+      <div className="category content">
+        <div className="ml-[20px]">Restaurants and bars</div>
+      </div>
+    </div>
+    <div className="category border-[1px] bg-[#FAFAFA] py-8 w-[95%] rounded-[10px]">
+      <div className="category content">
+        <div className="ml-[20px]">Restaurants and bars</div>
+      </div>
+    </div>
+    <div className="category border-[1px] bg-[#FAFAFA] py-8 w-[95%] rounded-[10px]">
+      <div className="category content">
+        <div className="ml-[20px]">Restaurants and bars</div>
+      </div>
+    </div>
+    <div className="category border-[1px] bg-[#FAFAFA] py-8 w-[95%] rounded-[10px]">
+      <div className="category content">
+        <div className="ml-[20px]">Restaurants and bars</div>
+      </div>
+    </div>
+    <div className="category border-[1px] bg-[#FAFAFA] py-8 w-[95%] rounded-[10px]">
+      <div className="category content">
+        <div className="ml-[20px]">Restaurants and bars</div>
+      </div>
+    </div>
+    <div className="category border-[1px] bg-[#FAFAFA] py-8 w-[95%] rounded-[10px]">
+      <div className="category content">
+        <div className="ml-[20px]">Restaurants and bars</div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<div className="mt-[80px]">
+  <div className="">
+    <div className="">
+      <div className="flex justify-center font-bold text-[20px] lg:text-[35px]">
+      Find Trustworthy Businesses.
+      </div>
+      <div className="flex justify-center font-bold text-[20px] lg:text-[35px]">
+      Shop Smartly.
+      </div>
+      <br></br>
+      <div className="text flex justify-center mx-[50px] lg:mx-[350px]">
+      Whether you're searching for the perfect restaurant to dine, a reliable contractor for home renovations, or a wellness center to rejuvenate your spirit, we believe that informed decisions lead to a more satisfying life.
+      </div>
+    </div>
+    <div className="mt-[40px] mb-[40px]">
+    <div className="flex flex-col gap-[5px] md:flex-row lg:flex-row">
+    <div className="flex gap-[5px]">
+    <div className="images">
+      <img src={img1} className=""/>
+    </div>
+    <div classMame="flex flex-col">
+      <div><img src={img2}/></div>
+      <div className="mt-[7px] lg:mt-[10px]"><img src={img3}/></div>
+    </div>
+  </div>
+  <div className="flex gap-[5px]">
+    <div><img src={img4}></img></div>
+    <div><img src={img5}></img></div>
+  </div>
+  </div>
+  </div>
+  </div>
+</div>
+
+
+<div className="mt-[50px] mb-[50px]">
+  <div className="text-[23px] font-bold flex justify-center align-center pr-[70px] pl-[70px] lg:pr-[400px] lg:pl-[400px] lg:text-[30px]">Unparalleled shopping experience, rooted in trust, transparency and authenticity.</div>
+  <div>
+    <div className="mt-[50px] gap-[20px] flex flex-col justify-center items-center lg:flex-row lg:justify-center lg:flex-wrap">
+    <div className="card flex flex-col bg-[#FAFAFA] gap-[20px] w-[90%] p-[20px] rounded lg:w-[45%] lg:flex lg:flex-row lg:h-auto">
+      <div><img src={img7} className="lg:w-[400px] lg:h-[200px]"></img></div>
+      <div className="lg:mt-[30px]">
+        <div className="font-bold text-[20px]">User-Generated Reviews</div>
+        <div>Real people, real experiences. Our community of users shares their reviews, providing you with firsthand knowledge.</div>
+      </div>
+    </div>
+    <div className="card flex flex-col bg-[#FAFAFA] gap-[20px] w-[90%] p-[20px] rounded lg:w-[45%] lg:flex lg:flex-row lg:h-auto">
+      <div><img src={img8} className="lg:w-[400px] lg:h-[200px]"></img></div>
+      <div className="lg:mt-[30px]">
+        <div className="font-bold text-[20px]">Real Experiences, Real Voices</div>
+        <div>Parrot is a vibrant community of verified users who share their authentic experiences, insights, and opinions. You can trust that the reviews and ratings you find here are genuine and based on real encounters.</div>
+      </div>
+    </div>
+    <div className="card flex flex-col bg-[#FAFAFA] gap-[20px] w-[90%] p-[20px] rounded lg:w-[45%] lg:flex lg:flex-row lg:h-auto">
+      <div><img src={img6} className="lg:w-[400px] lg:h-[200px]"></img></div>
+      <div className="lg:mt-[30px]">
+        <div className="font-bold text-[20px]">Verified Businesses</div>
+        <div>We work diligently to verify businesses and maintain high-quality standards, so you can trust the options you find here.</div>
+      </div>
+    </div>
+    <div className="card flex flex-col bg-[#FAFAFA] gap-[20px] w-[90%] p-[20px] rounded lg:w-[45%] lg:flex lg:flex-row lg:h-auto">
+      <div><img src={img9} className="lg:w-[400px] lg:h-[200px]"></img></div>
+      <div className="lg:mt-[30px]">
+        <div className="font-bold text-[20px]">Real Experiences, Real Voices</div>
+        <div>Whether you're in search of fine dining, healthcare services, automotive repair, or travel recommendations, Parrot provides a wide range of categories. Whatever your needs, we've got you covered.</div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
   </>)
 }
 

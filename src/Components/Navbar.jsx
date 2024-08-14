@@ -25,7 +25,7 @@ function Navbar() {
 
   return (
     <>
-    <nav className="lg:flex fixed z-0 bg-white shadow-lg w-full h-[80px auto] overflow-x-hidden">
+    <nav className="lg:flex fixed z-0 bg-white shadow-lg w-full h-[80px auto] z-50 overflow-x-hidden">
      <div className="flex lg:flex lg:mt-[20px] mb-[20px]">
        <div className="sm:h-auto sm:w-auto lg:h-auto lg:h-auto">
        <img src ={logo} className="ml-[20px] sm:pt-[25px] pt-[25px] lg:ml-[60px] lg:pt-[5px]" />
@@ -55,7 +55,7 @@ function Navbar() {
       </div>
       {
         isOpen && (
-  <div className="bg-[#000462] h-[800px] lg:hidden">
+  <div className="bg-[#000462] h-[800px] lg:hidden md:hidden">
     <div className="grid gap-[30px]">
       <div className="mt-[20px]">
       <div className="list_items text-white flex justify-center">
