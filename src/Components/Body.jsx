@@ -15,10 +15,9 @@ import img6  from '../assets/image 58.png';
 import img7  from '../assets/image 7.png';
 import img8  from '../assets/image 8.png';
 import img9  from '../assets/image 9.png';
-
-
-
-
+import gifimage from '../assets/gifimage.png';
+import { FaCheckCircle } from "react-icons/fa";
+import img10 from '../assets/Group 89.png';
 
 
 function Body() {
@@ -217,6 +216,76 @@ function Body() {
       </div>
     </div>
   </div>
+  </div>
+</div>
+
+
+<div className="mt-[100px]">
+  <div className="flex flex-col lg:flex-row lg:gap-[130px]">
+    <div>
+      <img src={gifimage} className="size-[95%]"/>
+    </div>
+    <div className="flex flex-col gap-[10px] justify-center px-4 lg:ml-[40px] lg:w-[36%]">
+    <div className="flex flex-col gap-[10px]">
+     <div><h1 className="text-[25px] font-bold lg:text-[31px]">Customer Voice = Customer Power. Make your Voice Heard. Leave your Mark.</h1></div>
+     <div><p>Have you had a memorable experience with a business or service provider? Share your story and help others make informed choices. Your review can make a difference!</p></div>
+     </div>
+     <div className="mt-[20px] mpx]"><button className="bg-[#000462] text-white text-[19px] h-auto py-1.5 px-4 rounded">Tell Parrot</button></div>
+    </div>
+  </div>
+</div>
+
+
+<div className="bg-[#000462] mt-[40px]">
+  <div className="pt-[90px] pb-[90px] flex flex-col gap-[100px] lg:justify-center lg:items-center lg:ml-[10%]">
+    <div className="text-[white] font-semibold text-[30px] flex flex-col justify-center items-center px-8">
+      <p>Are you a business?</p>
+    <p>Collect, Read and Respond to Customer Reviews.</p>
+    <div className="mt-[20px] mpx]"><button className="bg-orange-500 text-white text-[19px] h-auto py-1.5 px-4 rounded">Join Parrot</button></div>
+    </div>
+    <div className="flex flex-col gap-[20px] lg:flex-row">
+      <div className="flex flex-row justify-center hidden lg:visible lg:flex"><img src={img10}/></div>
+      <div>
+        <div className="flex flex-col gap-[60px]">
+        <div className="px-9">
+          <div className="flex flex-row gap-[15px]">
+            <div className="text-[white]"><FaCheckCircle /></div>
+            <div className="text-[white] font-semibold">Authentic Reviews</div>
+          </div>
+          <div className="text-[white]">
+          Receive honest and valuable feedback from real customers to help you improve and grow.
+          </div>
+        </div>
+        <div className="px-9">
+          <div className="flex flex-row gap-[15px]">
+            <div className="text-[white]"><FaCheckCircle /></div>
+            <div className="text-[white] font-semibold">Build Trust</div>
+          </div>
+          <div className="text-[white]">
+          Show your commitment to transparency and excellence by joining a platform that values trust and authenticity.
+          </div>
+        </div>
+        <div className="px-9">
+          <div className="flex flex-row gap-[15px]">
+            <div className="text-[white]"><FaCheckCircle /></div>
+            <div className="text-[white] font-semibold">Engage with Your Audience</div>
+          </div>
+          <div className="text-[white]">
+          Connect directly with your customers, respond to reviews, and share updates about your business.
+          </div>
+        </div>
+        <div className="px-9">
+          <div className="flex flex-row gap-[15px]">
+            <div className="text-[white]"><FaCheckCircle /></div>
+            <div className="text-[white] font-semibold">Boost Your Visibility</div>
+          </div>
+          <div className="text-[white]">
+          Increase your online visibility and reach potential customers actively seeking your products or services.
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
   </div>
 </div>
 
