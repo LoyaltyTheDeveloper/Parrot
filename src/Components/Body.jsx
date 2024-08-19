@@ -15,7 +15,6 @@ import img6  from '../assets/image 58.png';
 import img7  from '../assets/image 7.png';
 import img8  from '../assets/image 8.png';
 import img9  from '../assets/image 9.png';
-import gifimage from '../assets/gifimage.png';
 import { FaCheckCircle } from "react-icons/fa";
 import img10 from '../assets/Group 89.png';
 import { FaApple } from "react-icons/fa";
