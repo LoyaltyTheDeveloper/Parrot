@@ -55,11 +55,11 @@ function Navbar() {
       </div>
       {
         isOpen && (
-  <div className="bg-[#000462] h-[800px] lg:hidden md:hidden">
+  <div className="bg-[#000462] h-[2000px] lg:hidden md:hidden">
     <div className="grid gap-[30px]">
       <div className="mt-[20px]">
-      <div className="list_items text-white flex justify-center">
-        <ul className="grid gap-[30px] justify-center items-center">
+      <div className="list_items text-white flex justify-center items-center">
+        <ul className="flex flex-col gap-[30px] items-center">
           <li>Categories</li>
           <li>Reviews</li>
           <li>Offers</li>

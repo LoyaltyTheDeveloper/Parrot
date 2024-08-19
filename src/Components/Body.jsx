@@ -18,6 +18,14 @@ import img9  from '../assets/image 9.png';
 import gifimage from '../assets/gifimage.png';
 import { FaCheckCircle } from "react-icons/fa";
 import img10 from '../assets/Group 89.png';
+import { FaApple } from "react-icons/fa";
+import { BiLogoPlayStore } from "react-icons/bi";
+import img11 from '../assets/Group 129.png';
+import img12 from '../assets/Rectangle 32.png';
+import img13 from '../assets/Rectangle 33.png';
+import img14 from '../assets/Frame 888.png'
+import { FaXTwitter } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa6";
 
 
 function Body() {
@@ -240,7 +248,7 @@ function Body() {
   <div className="pt-[90px] pb-[90px] flex flex-col gap-[100px] lg:justify-center lg:items-center lg:ml-[10%]">
     <div className="text-[white] font-semibold text-[30px] flex flex-col justify-center items-center px-8">
       <p>Are you a business?</p>
-    <p>Collect, Read and Respond to Customer Reviews.</p>
+    <p className="">Collect, Read and Respond to Customer Reviews.</p>
     <div className="mt-[20px] mpx]"><button className="bg-orange-500 text-white text-[19px] h-auto py-1.5 px-4 rounded">Join Parrot</button></div>
     </div>
     <div className="flex flex-col gap-[20px] lg:flex-row">
@@ -289,6 +297,116 @@ function Body() {
   </div>
 </div>
 
+
+<div className="px-4 lg:px-[5%] pt-[30px] pb-[30px]">
+  <div className="flex flex-col gap-[100px] justify-center items-center bg-[#B96C2F] bg-opacity-15 mt-[60px] pt-[50px] px-[20px] rounded-[10px] lg:flex-row">
+    <div className="w-[100%] flex flex-col gap-[15px]">
+    <div className="text-[25px] font-bold">Take Parrot with you everywhere.</div>
+    <div>Read and explore reviews written by real customers, allowing you to gain valuable insights into the experiences of others with various businesses and services.</div>
+    <div>
+    </div>
+      <div className="buttons text-white flex flex-row gap-[10px]">
+        <button className="btn_1 bg-[black] rounded-[30px] flex flex-row gap-[20px] justify-center items-center gap-[7px] py-[1px] px-[20px]">
+          <div><FaApple className="size-[25px]"/></div>
+          <div>
+          <div className="text-[13px]">Available on</div>
+          <div>App Store</div>
+          </div>
+        </button>
+        <button className="btn_2 bg-[black] rounded-[30px] flex flex-row gap-[20px] justify-center items-center gap-[7px] py-[1px] px-[20px]">
+          <div><BiLogoPlayStore className="size-[25px]"/></div>
+          <div>
+          <div className="text-[13px]">Available on</div>
+          <div>Play Store</div>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div className="flex justify-center lg:size-[80%]"><img src={img11}/></div>
+  </div>
+</div>
+
+
+
+<div className="mt-[100px] px-[5%] pb-[200px] flex flex-col gap-[20px] lg:flex-row gap-[20px]">
+  <div className="px-[40px] border-[1px] rounded bg-[#FAFAFA] flex flex-col lg:flex-row lg:pb-[20px] lg:gap-[20px] lg:w-[50%]">
+    <div className="pt-[40px]"><img src={img12}/></div>
+    <div className="flex flex-col gap-[40px] pt-[20px] lg:w-[50%]">
+    <div>Parrot is my shopping assistant. I now shop with confidence and peace of mind knowing that what I order is what I will get. The reviews and testimonials of past customers come handy when I’m looking for a vendor to buy from. Love it 😘😘😘</div>
+    <div className="flex flex-col pb-[20px]">
+      <div className="text-[20px] font-bold">Ayomide Chimaroke</div>
+      <div>
+      <Stack spacing={1}>
+      <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
+    </Stack>
+    </div>
+    </div>
+    </div>
+  </div>
+  <div className="px-[40px] border-[1px] rounded bg-[#FAFAFA] flex flex-col lg:flex-row lg:pb-[20px] lg:gap-[20px] lg:w-[50%]">
+    <div className="pt-[40px]"><img src={img13}/></div>
+    <div className="flex flex-col gap-[40px] pt-[20px] lg:w-[50%]">
+    <div>Moved to a new neighbourhood and was looking for literarily everything -restaurants, saloon, painter, and a school to put kids. Parrot came handy, found a barber that gave me the perfect haircut. I also found a local restaurant on the app. The app is great.</div>
+    <div className="flex flex-col pb-[20px]">
+      <div className="text-[20px] font-bold">Gbenga Collins</div>
+      <div>
+      <Stack spacing={1}>
+      <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
+    </Stack>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div className="bg-[#000462]">
+  <div className="pt-[40px] pb-[40px]">
+  <div className="flex flex-col gap-[60px] lg:flex-row lg:justify-center lg:gap-[100px]">
+  <div className="flex flex-col items-center">
+  <div className="flex flex-col items-center gap-[20px] lg:flex-col lg:items-stretch">
+    <div><img src={img14}/></div>
+    <div className="flex flex-row text-[white] gap-[10px]">
+      <div><FaXTwitter /></div>
+      <div><FaInstagram /></div>
+    </div>
+  </div>
+  </div>
+  <div className="text-[white] flex flex-col gap-[25px] items-center lg:items-stretch">
+    <h1 className="text-[20px] font-semibold">Customers</h1>
+    <p>How does Parrot work</p>
+    <p>Content moderation</p>
+    <p>FAQ</p>
+    <p>Download App</p>
+  </div>
+  <div className="text-[white] flex flex-col gap-[25px] items-center lg:items-stretch">
+    <h1 className="text-[20px] font-semibold">Business</h1>
+    <p>Register</p>
+    <p>Claim my Business</p>
+    <p>Pricing</p>
+    <p>News</p>
+  </div>
+  <div className="text-[white] flex flex-col gap-[25px] items-center lg:items-stretch">
+    <h1 className="text-[20px] font-semibold">Legal</h1>
+    <p>Privacy Policies</p>
+    <p>Terms of Use</p>
+    <p>Cookies Policy</p>
+    <p>User Generated Content Policy</p>
+  </div>
+  <div className="text-[white] flex flex-col gap-[25px] items-center lg:items-stretch">
+    <h1 className="text-[20px] font-semibold">Company</h1>
+    <p>About us</p>
+    <p>Support</p>
+    <p>Blog</p>
+  </div>
+</div>
+<div className="flex flex-col pt-[60px]">
+  <div className="text-[white] h-[0.5px] px-[5%]"><hr></hr></div>
+  <div className="text-[white] flex justify-center text-[15px]">© Copyright 2023 All Rights Reserved</div>
+  </div>
+  </div>
+</div>
   </>)
 }
 
