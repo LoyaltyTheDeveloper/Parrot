@@ -46,10 +46,10 @@ function Navbar() {
       </div>
       </div>
       <div onClick={toggleMenu} className="nav_toggler absolute right-10 lg:hidden flex sm:flex mt-[25px] sm:mt-[25px] ml-[280px]">
-      <button class="flex flex-col items-center justify-center w-8 h-8 space-y-1">
-       <span class="block w-full h-0.5 bg-gray-800"></span>
-       <span class="block w-full h-0.5 bg-gray-800"></span>
-       <span class="block w-full h-0.5 bg-gray-800"></span>
+      <button className="flex flex-col items-center justify-center w-8 h-8 space-y-1">
+       <span className="block w-full h-0.5 bg-gray-800"></span>
+       <span className="block w-full h-0.5 bg-gray-800"></span>
+       <span className="block w-full h-0.5 bg-gray-800"></span>
       </button>
       </div>
       </div>

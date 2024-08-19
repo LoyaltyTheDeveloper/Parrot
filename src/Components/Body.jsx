@@ -15,6 +15,7 @@ import img6  from '../assets/image 58.png';
 import img7  from '../assets/image 7.png';
 import img8  from '../assets/image 8.png';
 import img9  from '../assets/image 9.png';
+import gifimage from '../assets/Gifimage.png';
 import { FaCheckCircle } from "react-icons/fa";
 import img10 from '../assets/Group 89.png';
 import { FaApple } from "react-icons/fa";
@@ -175,7 +176,7 @@ function Body() {
     <div className="images">
       <img src={img1} className=""/>
     </div>
-    <div classMame="flex flex-col">
+    <div className="flex flex-col">
       <div><img src={img2}/></div>
       <div className="mt-[7px] lg:mt-[10px]"><img src={img3}/></div>
     </div>
@@ -230,6 +231,7 @@ function Body() {
 <div className="mt-[100px]">
   <div className="flex flex-col lg:flex-row lg:gap-[130px]">
     <div>
+      <img src={gifimage} className="size-[95%]"/>
     </div>
     <div className="flex flex-col gap-[10px] justify-center px-4 lg:ml-[40px] lg:w-[36%]">
     <div className="flex flex-col gap-[10px]">
