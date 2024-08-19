@@ -230,7 +230,6 @@ function Body() {
 <div className="mt-[100px]">
   <div className="flex flex-col lg:flex-row lg:gap-[130px]">
     <div>
-      <img src={gifimage} className="size-[95%]"/>
     </div>
     <div className="flex flex-col gap-[10px] justify-center px-4 lg:ml-[40px] lg:w-[36%]">
     <div className="flex flex-col gap-[10px]">
