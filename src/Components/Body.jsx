@@ -44,8 +44,8 @@ function Body() {
       </div>
       <br></br>
     <div className="inputs gap-[20px] items-center justify-center flex flex-col lg:flex lg:flex-row sm:flex sm:flex-col lg:gap-[0px]">
-        <input className="bg-[white] h-[40px] w-[90%] lg:w-[500px] rounded" placeholder="hi" type="text"/>
-        <input className="bg-[white] h-[40px] w-[90%] lg:w-[500px] rounded" placeholder="hi" type="text"/>
+        <input className="bg-[white] h-[40px] w-[90%] lg:w-[500px] rounded" placeholder="  e.g Amala Skot, Restaurant, Hotels" type="text"/>
+        <input className="bg-[white] h-[40px] w-[90%] lg:w-[500px] rounded" placeholder="  location.." type="text"/>
         <div className="w-[90%] lg:ml-[20px]">
         <button className="bg-orange-500 text-white text-[19px] w-[100%] lg:w-[20%] h-auto py-1.5 rounded">Ask Parrot</button>
         </div>

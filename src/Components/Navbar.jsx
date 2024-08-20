@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import logo from '../assets/Group 80.png';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
 
@@ -22,7 +23,6 @@ function Navbar() {
     if (screenWidth > 1500) return;
       setIsOpen(false);
   };
-
   return (
     <>
     <nav className="lg:flex fixed z-0 bg-white shadow-lg w-full h-[80px auto] z-50 overflow-x-hidden">
@@ -33,11 +33,11 @@ function Navbar() {
       <div className="hidden sm:hidden absolute right-20  lg:flex gap-[20px]">
       <div className="list_items my-auto">
         <ul className="lg:flex lg:gap-[20px] justify-center">
-          <li>Categories</li>
-          <li>Reviews</li>
-          <li>Offers</li>
-          <li>Sign In</li>
-          <li>Sign Up</li>
+          <li><a href="/">Categories</a></li>
+          <li><a href="/">Reviews</a></li>
+          <li><a href="/">Offers</a></li>
+          <li><a href="/signin">Sign In</a></li>
+          <li><a href="signup">Sign Up</a></li>
         </ul>
       </div>
       <div className="navbar_buttons flex gap-[20px]">
@@ -60,11 +60,11 @@ function Navbar() {
       <div className="mt-[20px]">
       <div className="list_items text-white flex justify-center items-center">
         <ul className="flex flex-col gap-[30px] items-center">
-          <li>Categories</li>
-          <li>Reviews</li>
-          <li>Offers</li>
-          <li>Sign In</li>
-          <li>Sign Up</li>
+          <li><a href="/">Categories</a></li>
+          <li><a href="/">Reviews</a></li>
+          <li><a href="/">Offers</a></li>
+          <li><a href="/signin">Sign In</a></li>
+          <li><a href="/signup">Sign Up</a></li>
         </ul>
       </div>
       <div className="navbar_buttons grid gap-[30px] mt-[30px] justify-center">
