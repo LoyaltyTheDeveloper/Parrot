@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import PhoneInput from 'react-phone-number-input'
-import 'react-phone-number-input/style.css'
+import 'react-phone-number-input/style.css';
+import { useHistory } from 'react-router-dom';
+import { useAuthContext } from '../hooks/useAuthContext';
 
 function SignUp() {
-
+    const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -11,12 +13,10 @@ function SignUp() {
     const [lastName, setLastName] = useState('');
     const [userName, setUserName] = useState('');
     const [phone, setPhone] = useState();
+    const { dispatch } = useAuthContext();
 
     const handleSignup = (e) => {
         e.preventDefault();
-
-
-
         if (email === '' || password === '' || confirmPassword === '' || firstName === '' || lastName === '' || userName === '' || phone === '') {
             alert('All fields are required');
             return;
@@ -25,8 +25,42 @@ function SignUp() {
             alert("Passwords do not match!");
             return;
         }
-        console.log('Signing up with', email);
-    };
+        const formData = {
+            firstName, 
+            lastName, 
+            email, 
+            userName, 
+            phone, 
+            password
+          };
+
+          fetch('http://localhost:4000/signup', {
+            credentials: 'include',
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.success) {
+                localStorage.setItem('user', JSON.stringify(data))
+                dispatch({type: 'SIGNUP', payload: data})
+                alert("Signup success!");
+                setTimeout(() => {
+                    history.push('/homepage');
+                }, 1000);
+                
+              } else {
+                alert(data.message);
+              }
+            })
+            .catch((error) => {
+              alert('An error occurred. Please try again.');
+              console.error('Error:', error);
+            });
+        };
     return (
         <div className="flex items-center justify-center min-h-screen">
             <div className="p-8 rounded-lg mt-[100px]">
@@ -36,7 +70,8 @@ function SignUp() {
                 <div className="mb-4">
                         <label className="block text-gray-700">First Name</label>
                         <input
-                            type="email"
+                            type="text"
+                            name="firstname"
                             className="w-full px-3 py-2 border rounded-lg focus:outline-none"
                             value={firstName}
                             onChange={(e) => setFirstName(e.target.value)}
@@ -46,7 +81,8 @@ function SignUp() {
                     <div className="mb-4">
                         <label className="block text-gray-700">Last Name</label>
                         <input
-                            type="email"
+                            type="text"
+                            name="lastname"
                             className="w-full px-3 py-2 border rounded-lg focus:outline-none"
                             value={lastName}
                             onChange={(e) => setLastName(e.target.value)}
@@ -57,6 +93,7 @@ function SignUp() {
                         <label className="block text-gray-700">Email</label>
                         <input
                             type="email"
+                            name="email"
                             className="w-full px-3 py-2 border rounded-lg focus:outline-none"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -66,7 +103,8 @@ function SignUp() {
                     <div className="mb-4">
                         <label className="block text-gray-700">Parrot Username</label>
                         <input
-                            type="email"
+                            type="text"
+                            name="username"
                             className="w-full px-3 py-2 border rounded-lg focus:outline-none"
                             value={userName}
                             onChange={(e) => setUserName(e.target.value)}
@@ -76,7 +114,8 @@ function SignUp() {
                     <div className="mb-4">
                         <label className="block text-gray-700">Phone Number</label>
                         <PhoneInput
-                            type="number"
+                            type="text"
+                            name="phone"
                             value={phone}
                             className="w-full px-3 py-2 border rounded-lg focus:outline-none"
                             onChange={setPhone}
@@ -87,6 +126,7 @@ function SignUp() {
                         <label className="block text-gray-700">Create Password</label>
                         <input
                             type="password"
+                            name="password"
                             className="w-full px-3 py-2 border rounded-lg focus:outline-none"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
@@ -97,13 +137,14 @@ function SignUp() {
                         <label className="block text-gray-700">Confirm Password</label>
                         <input
                             type="password"
+                            name="password"
                             className="w-full px-3 py-2 border rounded-lg focus:outline-none"
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
                             placeholder="Confirm password"
                         />
                     </div>
-                    <button type="submit" className="w-full bg-[#000462] text-white py-2 rounded-lg">
+                    <button type="submit" className="w-full bg-[#000462] text-white py-2 rounded-lg" onClick={handleSignup}>
                         Sign Up
                     </button>
                     <div className="flex items-center justify-center my-4">
@@ -115,13 +156,13 @@ function SignUp() {
          <img className="w-5 h-5 mr-2" src="https://www.svgrepo.com/show/355037/google.svg" alt="Google Logo"/>
          Sign in with Google
        </button>
-       <div className="flex gap-[7px] mt-[20px] justify-center"><div>Have an account?</div> <div>Sign In</div></div>
+       <div className="flex gap-[7px] mt-[20px] justify-center"><div>Have an account?</div> <div><a href="/signin">Sign In</a></div></div>
                 </form>
             </div>
         </div>
-
         
     );
 }
+
 
 export default SignUp

@@ -41,7 +41,7 @@ function Navbar() {
         </ul>
       </div>
       <div className="navbar_buttons flex gap-[20px]">
-        <button className="bg-orange-500 text-white text-[19px] h-auto py-1.5 px-8 rounded my-auto">Write a Review</button>
+        <a href="/homepage"><button className="bg-orange-500 text-white text-[19px] h-auto py-1.5 px-8 rounded my-auto">Write a Review</button></a>
         <button className="bg-transparent text-orange-500 border border-orange-500 h-auto py-1.5 px-8 rounded my-auto ">For Business</button>
       </div>
       </div>
@@ -68,7 +68,7 @@ function Navbar() {
         </ul>
       </div>
       <div className="navbar_buttons grid gap-[30px] mt-[30px] justify-center">
-        <button className="bg-orange-500 text-white text-[19px] h-auto py-1.5 px-8 rounded my-auto">Write a Review</button>
+       <a href="/homepage"><button className="bg-orange-500 text-white text-[19px] h-auto py-1.5 px-8 rounded my-auto">Write a Review</button></a>
         <button className="bg-transparent text-orange-500 border border-orange-500 h-auto py-1.5 px-8 rounded my-auto ">For Business</button>
       </div>
       </div>
