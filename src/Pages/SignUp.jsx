@@ -49,7 +49,7 @@ function SignUp() {
                 dispatch({type: 'SIGNUP', payload: data})
                 alert("Signup success!");
                 setTimeout(() => {
-                    history.push('/homepage');
+                    history.push('/signin');
                 }, 1000);
                 
               } else {

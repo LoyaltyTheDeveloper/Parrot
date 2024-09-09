@@ -41,7 +41,9 @@ function SignIn() {
                     history.push('/homepage');
                 }, 1000);
               } else {
+                dispatch({type: 'LOGOUT'})
                 alert(data.message);
+                return;
               }
             })
             .catch((error) => {

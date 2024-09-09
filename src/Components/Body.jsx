@@ -61,7 +61,7 @@ function Body() {
 <div className="">
 <div className="font-bold text-[25px] mt-[60px] flex justify-center lg:text-[30px]">Recent Reviews</div>
 <div className="reviews flex justify-center items-center mt-[40px]">
-  <div className=" border-[1px] w-[400px] h-[auto] p-[20px] mb-[20px] flex-row rounded lg:flex lg:w-[auto]">
+  <div className="border-[1px] w-[400px] h-[auto] p-[20px] mb-[20px] flex-row rounded lg:flex lg:w-[auto]">
 <div className="">
   <div className="">
   <div className="w-24 flex">
