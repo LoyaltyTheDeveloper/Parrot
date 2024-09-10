@@ -15,6 +15,10 @@ function Navbar() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  
+
+
+ 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   }
@@ -33,15 +37,15 @@ function Navbar() {
       <div className="hidden sm:hidden absolute right-20  lg:flex gap-[20px]">
       <div className="list_items my-auto">
         <ul className="lg:flex lg:gap-[20px] justify-center">
-          <li><a href="/">Categories</a></li>
-          <li><a href="/">Reviews</a></li>
-          <li><a href="/">Offers</a></li>
-          <li><a href="/signin">Sign In</a></li>
-          <li><a href="signup">Sign Up</a></li>
+          <Link to="/">Categories</Link>
+          <Link to="/reviews">Reviews</Link>
+          <Link to="/">Offers</Link>
+          <Link to="/signin">Sign In</Link>
+          <Link to="/signup">Sign Up</Link>
         </ul>
       </div>
       <div className="navbar_buttons flex gap-[20px]">
-        <a href="/homepage"><button className="bg-orange-500 text-white text-[19px] h-auto py-1.5 px-8 rounded my-auto">Write a Review</button></a>
+        <Link to="/homepage"><button className="bg-orange-500 text-white text-[19px] h-auto py-1.5 px-8 rounded my-auto">Write a Review</button></Link>
         <button className="bg-transparent text-orange-500 border border-orange-500 h-auto py-1.5 px-8 rounded my-auto ">For Business</button>
       </div>
       </div>
@@ -60,15 +64,15 @@ function Navbar() {
       <div className="mt-[20px]">
       <div className="list_items text-white flex justify-center items-center">
         <ul className="flex flex-col gap-[30px] items-center">
-          <li><a href="/">Categories</a></li>
-          <li><a href="/">Reviews</a></li>
-          <li><a href="/">Offers</a></li>
-          <li><a href="/signin">Sign In</a></li>
-          <li><a href="/signup">Sign Up</a></li>
+        <Link to="/" onClick={toggleMenu}>Categories</Link>
+          <Link to="/reviews" onClick={toggleMenu}>Reviews</Link>
+          <Link to="/" onClick={toggleMenu}>Offers</Link>
+          <Link to="/signin" onClick={toggleMenu}>Sign In</Link>
+          <Link to="/signup" onClick={toggleMenu}>Sign Up</Link>
         </ul>
       </div>
       <div className="navbar_buttons grid gap-[30px] mt-[30px] justify-center">
-       <a href="/homepage"><button className="bg-orange-500 text-white text-[19px] h-auto py-1.5 px-8 rounded my-auto">Write a Review</button></a>
+       <Link to="/homepage" onClick={toggleMenu}><button className="bg-orange-500 text-white text-[19px] h-auto py-1.5 px-8 rounded my-auto">Write a Review</button></Link>
         <button className="bg-transparent text-orange-500 border border-orange-500 h-auto py-1.5 px-8 rounded my-auto ">For Business</button>
       </div>
       </div>

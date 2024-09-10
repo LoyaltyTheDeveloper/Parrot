@@ -7,6 +7,7 @@ import { FaRegThumbsDown } from "react-icons/fa";
 import { IoChatbubbleOutline } from "react-icons/io5";
 import { TiArrowForward } from "react-icons/ti";
 import Rating from '@mui/material/Rating';
+import { formatDistanceToNow } from 'date-fns';
 
 function Reviews() {
     const {dispatch } = useAuthContext();
@@ -16,9 +17,9 @@ function Reviews() {
     useEffect(() => {
         fetch('http://localhost:4000/getallcomments')
         .then((response) => response.json())
-        .then((data) => {setComments(JSON.stringify(data.comments))})
+        .then((data) => {setComments(data.comments)})
         .catch((error) => console.error('Error fetching comments', error))
-    }, [])
+    }, )
 
   return (<>
     <div>
@@ -48,39 +49,43 @@ function Reviews() {
 </div>
     </div>
   {/* Reviews list */}
-  <div className="">
-<div className="font-bold text-[25px] mt-[60px] flex justify-center lg:text-[30px]">Recent Reviews</div>
 
+<div>
+      {Array.isArray(comments) && comments.length > 0 ? (
+        <ul>
+          {comments.map((comment) => (
+            <li key={comment._id}>
+              <div className="">
   <div className="reviews flex justify-center items-center mt-[40px] mb-[60px]">
-  <div className="border-[1px] w-[400px] h-[auto] p-[20px] mb-[20px] flex-row rounded lg:flex lg:w-[auto]">
+  <div className="border-[1px] w-[400px] h-[auto] p-[20px] mb-[20px] flex-row rounded lg:flex lg:w-[700px]">
 <div className="">
   <div>
   <div className="w-24 flex">
     <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" className="rounded-[50%] size-[60%]"/>
     <div className="flex-row ml-[10px]">
-  <div className="profile text-[20px] w-[200px] font-semibold">Mr. Yemi</div>
-    <div className="">@yemi</div>
+  <div className="profile text-[20px] w-[200px] font-semibold">{comment.user.firstName}</div>
+    <div className="">@{comment.user.userName}</div>
     </div> 
   </div>
     </div>
   <div className="flex">
   <div className="text-[15px]">Akure Nigeria</div>
   <div className="divider divider-horizontal h-7 w-px bg-[black] mx-4"></div>
-  <div className="flex text-[15px]">Review for:<div className="text-[red] underline ml-[10px]">Organization</div></div>
+  <div className="flex text-[15px]">Review for:<div className="text-[red] underline ml-[10px]">{comment.organization}</div></div>
   </div>
   </div>
-  <div className="">
+  <div className="">  
   <Stack className="mt-[10px] lg:ml-[200px]"spacing={1}>
       <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
-      <div className="">3 days ago</div>
+      <div className="">{formatDistanceToNow(new Date(comment.createdAt), { addSuffix: true })}</div>
     </Stack>
-    <div className="lg:mt-[50px] lg:ml-[-290px]">
+    <div className="lg:mt-[50px] lg:ml-[-260px] lg:w-[650px]">
   <br></br>
-  <div>Comments..</div>
+  <div>{comment.review}</div>
   <br></br>
   </div>
   <br></br>
-  <div className="icons flex w-[auto] gap-[100px] lg:ml-[-290px]">
+  <div className="icons flex w-[auto] gap-[100px] lg:ml-[-250px]">
     <div className="flex gap-[20px]">
   <div className="flex gap-[15px] justify-center align-center">
   <div><FaRegThumbsUp className="size-[20px]"/></div><div>0 Upvote(s)</div>
@@ -100,36 +105,15 @@ function Reviews() {
   </div>
 </div>
 </div>
-
- {/* <div>
-        {comments.length > 0 ? (
-          <ul>
-            {comments.map((comment) => (
-              <li key={comment.id}>
-                <strong>{comment.user.userName}:</strong> {comment.user.reviews}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No comments available.</p>
-        )}
-  </div>  */}
-<p>{comments}</p>
-{/* <div>
-      <h2>Comments</h2>
-      {Array.isArray(comments) && comments.length > 0 ? (
-        <ul>
-          {comments.map((comment) => (
-            <li key={comment._id}>
-              <strong>{comment.user.userName}:</strong> {comment.review}
-              <p>Organization: {comment.organization}</p>
             </li>
           ))}
         </ul>
       ) : (
         <p>No comments available.</p>
       )}
-    </div> */}
+    </div>
+
+ 
 </>)
 }
 export default Reviews

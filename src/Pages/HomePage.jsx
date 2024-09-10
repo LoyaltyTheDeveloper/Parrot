@@ -13,7 +13,6 @@ function HomePage() {
    const {dispatch } = useAuthContext();
    const [images, setImages] = useState();
    const { user } = useAuthContext();
-
    const Logout = () => {
     localStorage.removeItem('user');
     history.push('/signin');
@@ -80,7 +79,7 @@ function HomePage() {
       <button onClick={Logout}>Logout</button>
       <br></br>
       </div>}
-      {user && <><div className="mt-[20px] text-[20px] flex justify-center">Tell parrot about your experince</div>
+      {user && <><div className="mt-[20px] text-[20px] flex justify-center">Tell parrot about your experience</div>
       <div className="flex flex-col items-center">
       <form>
             <div className="mb-4">
