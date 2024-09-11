@@ -22,6 +22,7 @@ function Reviews() {
     }, )
 
   return (<>
+  { user && <div>
     <div>
        <div className="bg-[#000462] items-center justify-center">
     <div className="bg-[#000462] justify-center flex flex-row">
@@ -49,7 +50,7 @@ function Reviews() {
 </div>
     </div>
   {/* Reviews list */}
-
+<div className="font-bold text-[30px] flex justify-center">Recent Reviews</div>
 <div>
       {Array.isArray(comments) && comments.length > 0 ? (
         <ul>
@@ -109,11 +110,14 @@ function Reviews() {
           ))}
         </ul>
       ) : (
-        <p>No comments available.</p>
+        <p className="flex justify-center items-center mt-[50px]">Could not fetch reviews..</p>
       )}
     </div>
-
- 
+</div>}
+  
+{!user && <div className="pt-[100px] text-[30px] text-[black]">
+      <h1>Login to see reviews.</h1>
+      </div>}
 </>)
 }
 export default Reviews

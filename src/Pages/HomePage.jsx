@@ -47,6 +47,7 @@ function HomePage() {
             alert(data.message)
      })
      .catch((error) => {
+      alert('Could not upload comment. Please check your internet connection.');
       console.log(error);
     });
     setOrganization('');
@@ -74,22 +75,37 @@ function HomePage() {
   return (
     <div>
       {
-      user && <div className="pt-[100px] text-[30px] text-[black] ml-[20px]">
-      <h1>Hi, {user.userName}, {user.userId}</h1>
+      user && <div className="pt-[100px] text-[30px] text-[black] ml-[20px] flex">
+        <div>
+      <h1>Hi, {user.userName}</h1>
+      </div>
+      <div className="ml-[40%] md:ml-[65%] lg:ml-[75%]">
       <button onClick={Logout}>Logout</button>
+      </div>
       <br></br>
       </div>}
-      {user && <><div className="mt-[20px] text-[20px] flex justify-center">Tell parrot about your experience</div>
+      {user && <><div className="mt-[20px] text-[20px] flex justify-center mt-[150px]">Tell parrot about your experience</div>
       <div className="flex flex-col items-center">
       <form>
             <div className="mb-4">
-                <label className="block text-gray-700">Organization</label>
-                <input
+                {/* <input
                     type="text"
                     value={organization}
                     className="w-[400px] px-3 py-2 border rounded-lg focus:outline-none"
                     onChange={(e) => setOrganization(e.target.value)}
-                />
+                /> */}
+                <select className="w-[400px] outline-none"
+                    value={organization}
+                    onChange={(e) => setOrganization(e.target.value)}
+                    required
+                >
+                   <option value="" disabled>Organization name</option>
+                   <option value="Zacrac">Zacrac</option>
+                   <option value="Diamond Image">Diamond Image</option>
+                   <option value="St Jacobs">St Jacobs</option>
+                   <option value="Royal Birds">Royal Birds</option>
+                   <option value="Deja Vu">Deja Vu</option>
+                  </select>
             </div>
               <div className="mb-[10px]">
                 <div className="font-bold">Rate this organization</div>

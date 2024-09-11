@@ -3,6 +3,7 @@ import PhoneInput from 'react-phone-number-input'
 import 'react-phone-number-input/style.css';
 import { useHistory } from 'react-router-dom';
 import { useAuthContext } from '../hooks/useAuthContext';
+import { Link } from 'react-router-dom';
 
 function SignUp() {
     const history = useHistory();
@@ -156,7 +157,7 @@ function SignUp() {
          <img className="w-5 h-5 mr-2" src="https://www.svgrepo.com/show/355037/google.svg" alt="Google Logo"/>
          Sign in with Google
        </button>
-       <div className="flex gap-[7px] mt-[20px] justify-center"><div>Have an account?</div> <div><a href="/signin">Sign In</a></div></div>
+       <div className="flex gap-[7px] mt-[20px] justify-center"><div>Have an account?</div> <div><Link to="/signin">Sign In</Link></div></div>
                 </form>
             </div>
         </div>

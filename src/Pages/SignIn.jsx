@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useAuthContext } from '../hooks/useAuthContext';
+import { Link } from 'react-router-dom';
 
 
 function SignIn() {
@@ -95,7 +96,7 @@ function SignIn() {
          <img className="w-5 h-5 mr-2" src="https://www.svgrepo.com/show/355037/google.svg" alt="Google Logo"/>
          Sign in with Google
        </button>
-       <div className="flex gap-[7px] mt-[20px] justify-center"><div>Don't have an account?</div> <div><a href="/signup">Sign up</a></div></div>
+       <div className="flex gap-[7px] mt-[20px] justify-center"><div>Don't have an account?</div> <div><Link to="/signup">Sign up</Link></div></div>
         </form>
     </div>
 </div>
