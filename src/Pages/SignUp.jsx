@@ -35,7 +35,7 @@ function SignUp() {
             password
           };
 
-          fetch('http://localhost:4000/signup', {
+          fetch('https://parrot-api-9.onrender.com:10000/signup', {
             credentials: 'include',
             method: 'POST',
             headers: {
