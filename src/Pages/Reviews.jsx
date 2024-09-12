@@ -15,7 +15,7 @@ function Reviews() {
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
-        fetch('https://parrot-api-9.onrender.com:10000/getallcomments')
+        fetch('https://parrot-api-9.onrender.com/getallcomments')
         .then((response) => response.json())
         .then((data) => {setComments(data.comments)})
         .catch((error) => console.error('Error fetching comments', error))

@@ -33,7 +33,7 @@ function HomePage() {
       review: review,
     };
 
-    fetch('https://parrot-api-9.onrender.com:10000/uploadcomment', {
+    fetch('https://parrot-api-9.onrender.com/uploadcomment', {
       credentials: 'include',
       method: 'POST',
       headers: {
