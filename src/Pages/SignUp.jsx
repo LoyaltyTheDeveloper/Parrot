@@ -34,6 +34,7 @@ function SignUp() {
               });
             return;
         }
+        setIsLoading(true);
         const formData = {
             firstName, 
             lastName, 
@@ -59,31 +60,26 @@ function SignUp() {
                 toast.success(data.message, { 
                     autoClose: 2000, 
                   });
-                  setIsLoading(true);
+                  setIsLoading(false);
                     history.push('/signin');
-                    
               } else {
                 toast.error(data.message, { 
                     autoClose: 2000, 
                   });
+                  setIsLoading(false);
+                  return;
               }
             })
             .catch((error) => {
               toast.error('An error occurred. Please try again.', { 
                 autoClose: 2000, 
               });
+              setIsLoading(false);
               console.error('Error:', error);
             });
         };
     return (<>
 <div>
-{isLoading ? (
-  <div>
-  <div className="flex items-center justify-center min-h-screen">
-  <div className="flex justify-center"><ClipLoader color="#3498db" loading={isLoading} size={50} /></div>
-  </div>
-  </div>
-) : (
     <div className="flex items-center justify-center min-h-screen">
     <div className="p-8 rounded-lg mt-[100px]">
         <h2 className="text-2xl font-bold mb-6">Sign Up</h2>
@@ -182,10 +178,9 @@ function SignUp() {
         </form>
     </div>
 </div>
-)}
 </div>
-</>
-        
+{isLoading && <div className="mt-[-600px] flex justify-center"><ClipLoader color="#3498db" loading={isLoading} size={50} /></div>}
+</>    
     );
 }
 

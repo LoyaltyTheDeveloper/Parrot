@@ -5,6 +5,7 @@ import { useAuthContext } from '../hooks/useAuthContext';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import { toast } from 'react-toastify';
+import ClipLoader from "react-spinners/ClipLoader";
 
 
 function HomePage() {
@@ -14,6 +15,7 @@ function HomePage() {
    const {dispatch } = useAuthContext();
    const [images, setImages] = useState();
    const { user } = useAuthContext();
+   const [isLoading, setIsLoading] = useState(false);
    const Logout = () => {
     localStorage.removeItem('user');
     history.push('/signin');
@@ -33,7 +35,7 @@ function HomePage() {
         });
         return;
     }
-
+   setIsLoading(true);
     const commentData = {
       organization: organization,
       review: review,
@@ -53,11 +55,13 @@ function HomePage() {
       toast.success(data.message, { 
         autoClose: 2000, 
       });
+      setIsLoading(false);
      })
      .catch((error) => {
       toast.error('Could not upload comment. Please check your internet connection.', { 
         autoClose: 2000, 
       });
+      setIsLoading(false);
       console.log(error);
     });
     setOrganization('');
@@ -135,7 +139,7 @@ function HomePage() {
             </button>
         </form>
       </div></>}
-
+      {isLoading && <div className="mt-[-200px] flex justify-center"><ClipLoader color="#3498db" loading={isLoading} size={50} /></div>}
       
       {!user && <div className="pt-[100px] text-[30px] text-[black]">
       <h1 className="flex justify-center">You are not logged in..</h1>

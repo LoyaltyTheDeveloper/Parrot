@@ -16,20 +16,19 @@ function SignIn() {
 
   const handleSignIn = (e) => {
       e.preventDefault();
-     
       if (email === '' || password === '') {
           toast.error('Both fields are required', {
             autoClose: 2000,
           });
           return;
       }
-
+      setIsLoading(true);
       const formData = {
         email: email,
         password: password,
       };
   
-      fetch('https://parrot-api-17s2.onrender.com/signin', {
+      fetch('https://parrot-api-17s2.onrender.com/signin', { 
         credentials: 'include',
         method: 'POST',
         headers: {
@@ -45,13 +44,14 @@ function SignIn() {
                 toast.success(data.message, { 
                   autoClose: 2000, 
                 });
-                setIsLoading(true);
-                  history.push('/homepage'); 
+                setIsLoading(false);
+                  history.push('/homepage');
               } else {
                 dispatch({type: 'LOGOUT'})
                 toast.error(data.message, {
                   autoClose: 2000,
                 });
+                setIsLoading(false);
                 return;
               }
             })
@@ -59,11 +59,12 @@ function SignIn() {
               toast.error("An error occurred. Please try again", {
                 autoClose: 2000,
               });
+              setIsLoading(false);
                 console.error('Error:', error);
               });
     };
   return (<>
-  {/* <div>
+  <div>
     <div className="flex items-center justify-center min-h-screen">
     <div className="p-8 rounded-lg">
         <div className="flex flex-col gap-[0px]">
@@ -111,10 +112,10 @@ function SignIn() {
     </div>
 </div>
 </div>
-{isLoading && <div className="mt-[200px] flex justify-center"><ClipLoader color="#3498db" loading={isLoading} size={50} /></div>} */}
+{isLoading && <div className="mt-[-400px] flex justify-center"><ClipLoader color="#3498db" loading={isLoading} size={50} /></div>}
 
 
-<div>
+{/* <div>
       {isLoading ? (
         <div>
           <div className="flex items-center justify-center min-h-screen">
@@ -171,7 +172,7 @@ function SignIn() {
 </div>
 </div>
       )}
-    </div>
+    </div> */}
 
 </>
 );
