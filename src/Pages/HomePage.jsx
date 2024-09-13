@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useAuthContext } from '../hooks/useAuthContext';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
+import { toast } from 'react-toastify';
 
 
 function HomePage() {
@@ -17,6 +18,9 @@ function HomePage() {
     localStorage.removeItem('user');
     history.push('/signin');
    dispatch({type: 'LOGOUT'})
+   toast.success('User logged out successfully.', { 
+    autoClose: 2000, 
+  });
    }
   
    const submitReview = (e) => {
@@ -24,7 +28,9 @@ function HomePage() {
     e.preventDefault();
      
     if (organization === '' || review === '') {
-        alert('Both fields are required');
+        toast.error('Both fields are required', { 
+          autoClose: 2000, 
+        });
         return;
     }
 
@@ -33,7 +39,7 @@ function HomePage() {
       review: review,
     };
 
-    fetch('https://parrot-api-9.onrender.com/uploadcomment', {
+    fetch('https://parrot-api-17s2.onrender.com/uploadcomment', {
       credentials: 'include',
       method: 'POST',
       headers: {
@@ -44,10 +50,14 @@ function HomePage() {
     })
     .then((response) => response.json())
     .then((data) => { 
-            alert(data.message)
+      toast.success(data.message, { 
+        autoClose: 2000, 
+      });
      })
      .catch((error) => {
-      alert('Could not upload comment. Please check your internet connection.');
+      toast.error('Could not upload comment. Please check your internet connection.', { 
+        autoClose: 2000, 
+      });
       console.log(error);
     });
     setOrganization('');
@@ -79,7 +89,7 @@ function HomePage() {
         <div>
       <h1>Hi, {user.userName}</h1>
       </div>
-      <div className="ml-[40%] md:ml-[65%] lg:ml-[75%]">
+      <div className="ml-[25%] md:ml-[65%] lg:ml-[75%]">
       <button onClick={Logout}>Logout</button>
       </div>
       <br></br>
@@ -88,13 +98,7 @@ function HomePage() {
       <div className="flex flex-col items-center">
       <form>
             <div className="mb-4">
-                {/* <input
-                    type="text"
-                    value={organization}
-                    className="w-[400px] px-3 py-2 border rounded-lg focus:outline-none"
-                    onChange={(e) => setOrganization(e.target.value)}
-                /> */}
-                <select className="w-[400px] outline-none"
+                <select className="w-[350px] outline-none"
                     value={organization}
                     onChange={(e) => setOrganization(e.target.value)}
                     required
@@ -121,12 +125,12 @@ function HomePage() {
                 placeholder="Please share your honest experiences with this company, both the positive and negative aspects."
                     type="text"
                     value={review}
-                    className="w-[400px] px-3 py-2 border rounded-lg focus:outline-none"
+                    className="w-[350px] px-3 py-2 border rounded-lg focus:outline-none h-[100px]"
                     onChange={(e) => setReview(e.target.value)}
                 />
             </div>
             <br></br>
-            <button type="submit" className="w-full bg-[#000462] text-white py-2 rounded-lg" onClick={submitReview}>
+            <button type="submit" className="w-full bg-[#000462] text-white py-2 rounded-lg active:bg-blue-800" onClick={submitReview}>
                 Submit
             </button>
         </form>
@@ -134,7 +138,7 @@ function HomePage() {
 
       
       {!user && <div className="pt-[100px] text-[30px] text-[black]">
-      <h1>You are not logged in..</h1>
+      <h1 className="flex justify-center">You are not logged in..</h1>
       </div>}
     </div>
   )

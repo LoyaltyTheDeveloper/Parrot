@@ -7,6 +7,8 @@ import SignIn from './Pages/SignIn';
 import SignUp from './Pages/SignUp';
 import HomePage from './Pages/HomePage';
 import Reviews from './Pages/Reviews';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
       <Route exact path="/homepage" component={HomePage}/>
       <Route exact path="/reviews" component={Reviews}/>
       </Switch>
+      <ToastContainer />
       </Router>
     </>
   )

@@ -8,16 +8,18 @@ import { IoChatbubbleOutline } from "react-icons/io5";
 import { TiArrowForward } from "react-icons/ti";
 import Rating from '@mui/material/Rating';
 import { formatDistanceToNow } from 'date-fns';
+import ClipLoader from "react-spinners/ClipLoader";
 
 function Reviews() {
     const {dispatch } = useAuthContext();
     const { user } = useAuthContext();
     const [comments, setComments] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch('https://parrot-api-9.onrender.com/getallcomments')
+        fetch('http://localhost:4000/getallcomments')
         .then((response) => response.json())
-        .then((data) => {setComments(data.comments)})
+        .then((data) => {setComments(data.comments); setIsLoading(false)})
         .catch((error) => console.error('Error fetching comments', error))
     }, )
 
@@ -110,13 +112,13 @@ function Reviews() {
           ))}
         </ul>
       ) : (
-        <p className="flex justify-center items-center mt-[50px]">Could not fetch reviews..</p>
+        <p className="flex justify-center items-center mt-[50px]"><div className="flex justify-center"><ClipLoader color="#3498db" loading={isLoading} size={50} /></div></p>
       )}
     </div>
 </div>}
   
 {!user && <div className="pt-[100px] text-[30px] text-[black]">
-      <h1>Login to see reviews.</h1>
+      <h1 className="flex justify-center">Login to see reviews.</h1>
       </div>}
 </>)
 }
