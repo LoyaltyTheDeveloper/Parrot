@@ -17,7 +17,7 @@ function Reviews() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:4000/getallcomments')
+        fetch('https://parrot-api-17s2.onrender.com/getallcomments')
         .then((response) => response.json())
         .then((data) => {setComments(data.comments); setIsLoading(false)})
         .catch((error) => console.error('Error fetching comments', error))
